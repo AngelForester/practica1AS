@@ -83,6 +83,10 @@ app.run(["$rootScope", "$location", "$timeout", function($rootScope, $location, 
 app.controller("appCtrl", function ($scope, $http) {
 })
 app.controller("productosCtrl", function ($scope, $http) {
+    function buscarProducto() {
+        $("#tbodyProductos").html("")
+    }
+
     $(document).on("submit", "#frmProducto", function (event) {
         event.preventDefault()
 
@@ -95,6 +99,7 @@ app.controller("productosCtrl", function ($scope, $http) {
             //
         })
     })
+
     $(document).on("click", ".btn-ingredientes", function (event) {
         const id = $(this).data("id")
 
